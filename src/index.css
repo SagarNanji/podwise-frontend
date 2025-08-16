@@ -1,0 +1,106 @@
+/* Tailwind v4 entry */
+@import "tailwindcss";
+
+/* ===== Tailwind v4 design tokens (enable bg-card, text-muted-foreground, etc.) ===== */
+@theme {
+  --color-background: hsl(240 10% 3.9%);
+  --color-foreground: hsl(0 0% 98%);
+
+  --color-card: hsl(240 10% 3.9%);
+  --color-card-foreground: hsl(0 0% 98%);
+
+  --color-popover: hsl(240 10% 3.9%);
+  --color-popover-foreground: hsl(0 0% 98%);
+
+  --color-primary: hsl(263 70% 50%);
+  --color-primary-foreground: hsl(0 0% 98%);
+
+  --color-secondary: hsl(240 3.7% 15.9%);
+  --color-secondary-foreground: hsl(0 0% 98%);
+
+  --color-muted: hsl(240 3.7% 15.9%);
+  --color-muted-foreground: hsl(240 5% 64.9%);
+
+  --color-accent: hsl(240 3.7% 15.9%);
+  --color-accent-foreground: hsl(0 0% 98%);
+
+  --color-destructive: hsl(0 84.2% 60.2%);
+  --color-destructive-foreground: hsl(0 0% 98%);
+
+  --color-border: hsl(240 3.7% 15.9%);
+  --color-input: hsl(240 3.7% 15.9%);
+  --color-ring: hsl(263 70% 50%);
+
+  /* Sidebar family */
+  --color-sidebar: hsl(0 0% 98%);
+  --color-sidebar-foreground: hsl(240 5.3% 26.1%);
+  --color-sidebar-primary: hsl(240 5.9% 10%);
+  --color-sidebar-primary-foreground: hsl(0 0% 98%);
+  --color-sidebar-accent: hsl(240 4.8% 95.9%);
+  --color-sidebar-accent-foreground: hsl(240 5.9% 10%);
+  --color-sidebar-border: hsl(220 13% 91%);
+  --color-sidebar-ring: hsl(217.2 91.2% 59.8%);
+
+  --radius: 0.5rem;
+}
+
+/* Extra custom vars (gradients/shadows/audio). Tailwind utilities don’t read these directly. */
+:root {
+  --audio-primary: 263 70% 50%;
+  --audio-secondary: 280 100% 70%;
+  --audio-warm: 45 100% 70%;
+
+  --gradient-primary: linear-gradient(135deg, hsl(263 70% 50%), hsl(280 100% 70%));
+  --gradient-warm: linear-gradient(135deg, hsl(263 70% 50%), hsl(45 100% 70%));
+  --gradient-subtle: linear-gradient(180deg, hsl(240 10% 3.9%), hsl(240 5% 6%));
+
+  --shadow-glow: 0 0 40px hsl(263 70% 50% / 0.3);
+  --shadow-warm: 0 8px 32px hsl(263 70% 50% / 0.2);
+}
+
+/* Dark theme overrides for tokens (works with <html class="dark"> or <body class="dark">) */
+.dark {
+  --color-background: hsl(222.2 84% 4.9%);
+  --color-foreground: hsl(210 40% 98%);
+
+  --color-card: hsl(222.2 84% 4.9%);
+  --color-card-foreground: hsl(210 40% 98%);
+
+  --color-popover: hsl(222.2 84% 4.9%);
+  --color-popover-foreground: hsl(210 40% 98%);
+
+  --color-primary: hsl(210 40% 98%);
+  --color-primary-foreground: hsl(222.2 47.4% 11.2%);
+
+  --color-secondary: hsl(217.2 32.6% 17.5%);
+  --color-secondary-foreground: hsl(210 40% 98%);
+
+  --color-muted: hsl(217.2 32.6% 17.5%);
+  --color-muted-foreground: hsl(215 20.2% 65.1%);
+
+  --color-accent: hsl(217.2 32.6% 17.5%);
+  --color-accent-foreground: hsl(210 40% 98%);
+
+  --color-destructive: hsl(0 62.8% 30.6%);
+  --color-destructive-foreground: hsl(210 40% 98%);
+
+  --color-border: hsl(217.2 32.6% 17.5%);
+  --color-input: hsl(217.2 32.6% 17.5%);
+  --color-ring: hsl(212.7 26.8% 83.9%);
+
+  --color-sidebar: hsl(240 5.9% 10%);
+  --color-sidebar-foreground: hsl(240 4.8% 95.9%);
+  --color-sidebar-primary: hsl(224.3 76.3% 48%);
+  --color-sidebar-primary-foreground: hsl(0 0% 100%);
+  --color-sidebar-accent: hsl(240 3.7% 15.9%);
+  --color-sidebar-accent-foreground: hsl(240 4.8% 95.9%);
+  --color-sidebar-border: hsl(240 3.7% 15.9%);
+  --color-sidebar-ring: hsl(217.2 91.2% 59.8%);
+}
+
+/* Minimal base so borders/body inherit your tokens without using @apply */
+*, ::before, ::after { border-color: var(--color-border); }
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+}
