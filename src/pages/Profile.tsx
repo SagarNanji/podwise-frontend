@@ -11,7 +11,6 @@ import { Save, ShieldCheck, KeyRound, User2 } from "lucide-react";
 import type { User } from "@/types/user";
 import { endpoint } from "@/config";
 
-const API = import.meta.env.VITE_API_BASE || `${endpoint}`;
 
 export default function Profile() {
   // profile fields
@@ -40,7 +39,7 @@ export default function Profile() {
       setLoading(true);
       setErr(null);
       try {
-        const r = await fetch(`${API}/api/profile`, {
+        const r = await fetch(`${endpoint}/api/profile`, {
           credentials: "include",
           signal: ac.signal,
         });
@@ -70,7 +69,7 @@ export default function Profile() {
     setMsg(null);
     setErr(null);
     try {
-      const r = await fetch(`${API}/api/profile`, {
+      const r = await fetch(`${endpoint}/api/profile`, {
         method: "PUT",
         credentials: "include",
         headers: { "Content-Type": "application/json" },
@@ -95,7 +94,7 @@ export default function Profile() {
       if (newPassword.length < 8) throw new Error("New password must be at least 8 characters");
       if (newPassword !== confirm) throw new Error("New password and confirmation do not match");
 
-      const r = await fetch(`${API}/api/profile/password`, {
+      const r = await fetch(`${endpoint}/api/profile/password`, {
         method: "PUT",
         credentials: "include",
         headers: { "Content-Type": "application/json" },

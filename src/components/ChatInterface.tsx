@@ -54,7 +54,7 @@ export const ChatInterface: React.FC<ChatInterfaceProps> = ({ sessionId, onBack 
     setIsLoading(true);
 
     try {
-      const response = await fetch(`${endpoint}/chat/${sessionId}`, {
+      const response = await fetch(`${endpoint}/api/chat/${sessionId}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

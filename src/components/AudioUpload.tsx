@@ -46,7 +46,7 @@ export const AudioUpload: React.FC<AudioUploadProps> = ({ onSessionCreated }) =>
       // Important: ensure the file input is not empty
       formData.append('file', file);
 
-      const res = await fetch(`${endpoint}/session`, {
+      const res = await fetch(`${endpoint}/api/session`, {
         method: 'POST',
         credentials: 'include', 
         body: formData,
